@@ -12,3 +12,22 @@ This is the project you get when you run `gridsome create new-project`.
 2. `cd my-gridsome-site` to open the folder
 3. `gridsome develop` to start a local dev server at `http://localhost:8080`
 4. Happy coding 🎉🙌
+
+### 3. Configuring Storyblok plugin
+
+In `gridsome.config.js` add your Storyblok space public access token like this:
+
+```js
+plugins: [
+  {
+    use: 'gridsome-source-storyblok',
+    options: {
+      client: {
+        accessToken: process.env.STORYBLOK_ACCESS_TOKEN // access token here
+      },
+      version: 'published',
+      typeName: 'StoryblokEntry'
+    }
+  }
+];
+```
